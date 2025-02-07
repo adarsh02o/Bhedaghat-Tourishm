@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        .container {
+            width: 90%;
+            max-width: 600px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        h2 {
+            color: #333;
+        }
+        .contact-info {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        .contact-info p {
+            margin: 5px 0;
+            font-size: 16px;
+        }
+        form input, form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        button:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <img src="./media/owner.jpg" alt="Owner Image">
+    <h2>Adarsh Agrawal</h2>
+    <p>Student At GGITS</p>
+
+    <div class="contact-info">
+        <p><strong>Email:</strong> adarsh.agrawal.cs22@ggits.net</p>
+        <p><strong>Phone:</strong> +91 7049590456</p>
+        <p><strong>Address:</strong> Main Street, shastri nagar, Jabalpur(482003)</p>
+    </div>
+
+    <h2>Contact Us</h2>
+    <form id="contactForm">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Your Email" required>
+        <textarea id="message" rows="4" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+</div>
+
+<script>
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        let name = document.getElementById("name").value.trim();
+        let email = document.getElementById("email").value.trim();
+        let message = document.getElementById("message").value.trim();
+
+        if (name === ""  email === ""  message === "") {
+            alert("All fields are required!");
+        } else {
+            alert("Thank you, " + name + "! Your message has been sent successfully.");
+            document.getElementById("contactForm").reset();
+        }
+    });
+</script>
+
+</body>
+</html>
